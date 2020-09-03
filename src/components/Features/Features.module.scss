@@ -1,0 +1,22 @@
+.container {
+  background-color: #eff1f7;
+  height: 80vh;
+  width: 100%;
+}
+
+.textContainer {
+  text-align: center;
+  margin-top: 8rem;
+
+  & h2 {
+    font-size: 5rem;
+    color: hsl(260, 8%, 14%);
+    margin: 0;
+  }
+
+  & h4 {
+    font-size: 1.4rem;
+    color: hsl(257, 3%, 43%);
+    font-weight: 200;
+  }
+}
