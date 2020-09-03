@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Navigation.module.scss';
-import cx from 'classnames';
+
 import logo from '../../images/logo.svg';
 
 export default function Navigation() {
