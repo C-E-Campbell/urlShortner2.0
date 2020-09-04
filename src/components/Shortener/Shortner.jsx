@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import style from './Shortner.module.scss';
+import Modal from '../Modal/Modal';
 import axios from 'axios';
 import cx from 'classnames';
 export default function Shortner() {
   const [link, setLink] = useState('');
   const [isEmpty, setEmpty] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,11 +40,20 @@ export default function Shortner() {
           type='text'
           placeholder='Shorten a link here...'
         />
-        <button className={style.button} type='submit'>
+        <button
+          onClick={() => {
+            if (link) {
+              setOpen(true);
+            }
+          }}
+          className={style.button}
+          type='submit'
+        >
           Shorten It!
         </button>
       </form>
       {isEmpty ? <h5 className={style.h5}>Please add a link</h5> : null}
+      <Modal onClose={() => setOpen(false)} open={isOpen}></Modal>
     </div>
   );
 }
