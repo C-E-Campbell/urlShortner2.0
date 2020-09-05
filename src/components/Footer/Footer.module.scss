@@ -6,10 +6,15 @@
   justify-content: space-around;
   padding: 50px;
 }
+.innerContainer {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
 
 .linksContainer {
   display: flex;
-  width: 30%;
+  width: 35%;
   justify-content: space-around;
 }
 
@@ -32,8 +37,8 @@
 
 .socialContainer {
   display: flex;
-  width: 12%;
-  justify-content: space-around;
+  width: 15%;
+  justify-content: space-between;
 }
 
 i {
