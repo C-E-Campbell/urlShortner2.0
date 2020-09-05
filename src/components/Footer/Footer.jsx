@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Footer.module.scss';
 import logo from '../../images/logo2.svg';
+import cx from 'classnames';
 export default function Footer() {
   return (
     <div className={style.footer}>
@@ -42,10 +43,10 @@ export default function Footer() {
           </div>
         </div>
         <div className={style.socialContainer}>
-          <i className='fab fa-facebook fa-3x icon'></i>
-          <i className='fab fa-twitter fa-3x icon'></i>
-          <i className='fab fa-pinterest fa-3x icon'></i>
-          <i className='fab fa-instagram fa-3x icon'></i>
+          <i className={cx('fab', 'fa-facebook', 'fa-3x', style.btn)}></i>
+          <i className={cx('fab', 'fa-twitter', 'fa-3x', style.btn)}></i>
+          <i className={cx('fab', 'fa-pinterest', 'fa-3x', style.btn)}></i>
+          <i className={cx('fab', 'fa-instagram', 'fa-3x', style.btn)}></i>
         </div>
       </div>
     </div>

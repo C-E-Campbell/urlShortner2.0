@@ -18,7 +18,7 @@ export default function Shortner() {
           url: link,
         })
         .then((res) => {
-          isOpen(true);
+          setOpen(true);
           setLink('');
         });
     }
