@@ -1,0 +1,43 @@
+.featureContainer {
+  width: 25%;
+  height: 20vh;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &:nth-child(2) {
+    margin-top: 8rem;
+  }
+
+  &:nth-child(3) {
+    margin-top: 12rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  color: hsl(255, 11%, 22%);
+  margin: 3rem 0 1rem;
+}
+.iconContainer {
+  position: absolute;
+  top: -27px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: hsl(257, 27%, 26%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.article {
+  color: hsl(257, 7%, 63%);
+  font-size: 1.1rem;
+}
+
+.icon {
+  color: hsl(180, 66%, 49%);
+}

@@ -18,7 +18,7 @@ export default function Shortner() {
           url: link,
         })
         .then((res) => {
-          alert(`https://rel.ink/${res.data.hashid}`);
+          isOpen(true);
           setLink('');
         });
     }
@@ -40,15 +40,7 @@ export default function Shortner() {
           type='text'
           placeholder='Shorten a link here...'
         />
-        <button
-          onClick={() => {
-            if (link) {
-              setOpen(true);
-            }
-          }}
-          className={style.button}
-          type='submit'
-        >
+        <button className={style.button} type='submit'>
           Shorten It!
         </button>
       </form>
