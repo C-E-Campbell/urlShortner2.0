@@ -2,22 +2,33 @@ import React, { useState } from 'react';
 import style from './Shortner.module.scss';
 import Modal from '../Modal/Modal';
 import axios from 'axios';
+import loadingImg from '../../images/loading.svg';
 import cx from 'classnames';
 export default function Shortner() {
   const [link, setLink] = useState('');
   const [isEmpty, setEmpty] = useState(false);
   const [isOpen, setOpen] = useState(false);
-
+  const [data, setData] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, isLoading] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!link) {
       setEmpty(true);
     } else {
+      isLoading(true);
       axios
         .post('https://rel.ink/api/links/', {
           url: link,
         })
         .then((res) => {
+          setData(res.data.hashid);
+          setOpen(true);
+          setLink('');
+        })
+        .catch((err) => {
+          setData(err.response.data.url[0]);
+          setError(true);
           setOpen(true);
           setLink('');
         });
@@ -41,11 +52,21 @@ export default function Shortner() {
           placeholder='Shorten a link here...'
         />
         <button className={style.button} type='submit'>
-          Shorten It!
+          {loading ? (
+            <img className={style.loading} src={loadingImg} alt='load' />
+          ) : (
+            'Shorten It!'
+          )}
         </button>
       </form>
       {isEmpty ? <h5 className={style.h5}>Please add a link</h5> : null}
-      <Modal onClose={() => setOpen(false)} open={isOpen}></Modal>
+      <Modal
+        loading={isLoading}
+        error={error}
+        hash={data}
+        onClose={() => setOpen(false)}
+        open={isOpen}
+      ></Modal>
     </div>
   );
 }
