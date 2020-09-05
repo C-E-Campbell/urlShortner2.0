@@ -1,14 +1,25 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import style from './Modal.module.scss';
+import { motion } from 'framer-motion';
 import cx from 'classnames';
 export default function Modal({ open, onClose, hash, loading }) {
   if (!open) {
     return null;
   }
 
+  const variants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
   return ReactDom.createPortal(
-    <>
+    <motion.div
+      initial='hidden'
+      animate='visible'
+      variants={variants}
+      transition={{ duration: 0.5 }}
+    >
       <div
         onClick={() => {
           loading(false);
@@ -39,7 +50,7 @@ export default function Modal({ open, onClose, hash, loading }) {
           </div>
         )}
       </div>
-    </>,
+    </motion.div>,
     document.getElementById('portal')
   );
 }
