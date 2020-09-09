@@ -41,3 +41,10 @@
 .icon {
   color: hsl(180, 66%, 49%);
 }
+
+@media (max-width: 1300px) {
+  .featureContainer {
+    width: 25%;
+    margin-bottom: 10rem;
+  }
+}
