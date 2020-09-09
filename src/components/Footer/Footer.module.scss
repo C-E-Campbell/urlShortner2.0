@@ -49,3 +49,20 @@
     cursor: pointer;
   }
 }
+@media (max-width: 1300px) {
+  .innerContainer {
+    width: 97%;
+  }
+
+  .linksContainer {
+    display: flex;
+    width: 55%;
+    justify-content: space-around;
+  }
+  .socialContainer {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    justify-content: space-around;
+  }
+}

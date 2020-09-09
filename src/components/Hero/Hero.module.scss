@@ -43,3 +43,22 @@
 .heroImg {
   width: 55%;
 }
+
+@media (max-width: 1300px) {
+  .heroContainer {
+    width: 87%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .textContainer {
+    padding-top: 3rem;
+    width: 50%;
+    & h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: hsl(255, 11%, 22%);
+    }
+  }
+}

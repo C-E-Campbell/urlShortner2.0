@@ -92,3 +92,14 @@
   font-weight: 200;
   font-style: italic;
 }
+
+@media (max-width: 1300px) {
+  .formContainer {
+    width: 87%;
+  }
+}
+@media (max-width: 1000px) {
+  .formContainer {
+    width: 97%;
+  }
+}
