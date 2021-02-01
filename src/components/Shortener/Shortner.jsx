@@ -18,16 +18,14 @@ export default function Shortner() {
     } else {
       isLoading(true);
       axios
-        .post('https://rel.ink/api/links/', {
-          url: link,
-        })
+        .post(`https://api.shrtco.de/v2/shorten?url=${link}`)
         .then((res) => {
-          setData(res.data.hashid);
+          setData(res.data.result.short_link);
           setOpen(true);
           setLink('');
         })
         .catch((err) => {
-          setData(err.response.data.url[0]);
+          setData('Invalid Link');
           setError(true);
           setOpen(true);
           setLink('');
@@ -48,12 +46,12 @@ export default function Shortner() {
           className={cx(style.input, { [style.error]: isEmpty })}
           value={link}
           onChange={(e) => handleChange(e)}
-          type='text'
-          placeholder='Shorten a link here...'
+          type="text"
+          placeholder="Shorten a link here..."
         />
-        <button className={style.button} type='submit'>
+        <button className={style.button} type="submit">
           {loading ? (
-            <img className={style.loading} src={loadingImg} alt='load' />
+            <img className={style.loading} src={loadingImg} alt="load" />
           ) : (
             'Shorten It!'
           )}
